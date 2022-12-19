@@ -1,0 +1,11 @@
+version: "2"
+options:
+  verbose: true
+syncs:
+  sync-rsync:
+    src: './lower'
+    sync_host_port: 10872
+  sync-node:
+    src: './interact'
+    sync_host_port: 10873
+sync_strategy: 'rsync'

@@ -1,0 +1,40 @@
+App\Entity\User:
+  user (template):
+    plainPassword: '123456'
+    isActive: true
+    language: 'en'
+
+  profile (template):
+    firstName: <firstName()>
+    lastName: <lastName()>
+    additionalName: <username()>
+    phoneNumber: '123456789'
+
+  assistant_1 (extends user):
+    email: 'assistant@test.com'
+    roles: '[ROLE_ASSISTANT]'
+
+  debtor_1 (extends user):
+    email: 'debtor@test.com'
+    roles: '[ROLE_DEBTOR]'
+
+  account_1 (extends user):
+    email: 'account@test.com'
+    roles: '[ROLE_ACCOUNT]'
+    assistant: '@assistant_1'
+
+App\Entity\Profile:
+  profile (template):
+    firstName: <firstName()>
+    lastName: <lastName()>
+    additionalName: <username()>
+    phoneNumber: '123456789'
+
+  assistant_profile_1 (extends profile):
+    owner: '@assistant_1'
+
+  debtor_profile_1 (extends profile):
+    owner: '@debtor_1'
+
+  account_profile_1 (extends profile):
+    owner: '@account_1'

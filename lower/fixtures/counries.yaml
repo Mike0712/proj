@@ -1,0 +1,10 @@
+App\Entity\Currency:
+  currency_1:
+    isoNum: 4217
+    isoCode: 'RUB'
+
+App\Entity\Country:
+  country_1:
+    isoCode: 'RU'
+    locale: 'ru'
+    currency: '@currency_1'

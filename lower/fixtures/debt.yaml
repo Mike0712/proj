@@ -1,0 +1,14 @@
+App\Entity\DebtDocument:
+  debt_{1..10}:
+    docName: <text(15)>
+    amount: <numberBetween(10000.0, 100000.0)>
+    account: '@account_1'
+    deadline: '<dateTimeBetween("+50 days", "+250 days")>'
+    currency: '@currency_1'
+
+App\Entity\PreDebtor:
+  pre_debtor_{1..10}:
+    firstName: <firstName()>
+    lastName: <lastName()>
+    additionalName: <username()>
+    debtDocument: '@debt_<current()>'
